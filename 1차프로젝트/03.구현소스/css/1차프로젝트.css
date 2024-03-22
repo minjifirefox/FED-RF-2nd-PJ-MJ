@@ -19,6 +19,16 @@ body * {
     height: 100vh;
 }
 
+.circle{
+    position: absolute;
+    top: 10em;
+    left: 60em;
+    width: 1000px;
+    height: 1000px;
+    background-color: lavender;
+    border-radius: 1000px;
+}
+
 .introduce-area{
     height: 100vh;
 }
