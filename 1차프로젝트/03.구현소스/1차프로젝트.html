@@ -5,12 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minji Portfolio</title>
     <link rel="stylesheet" href="./css/1차프로젝트.css">
+    <style>
+        /* body{
+            background-color: rgb(22, 21, 21);
+        } */
+        body{
+            background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
+        }
+        .pg{
+            height: 100vh;
+            transition: 2s ease-in-out;
+            cursor: pointer;
+        }
+        .pg1{
+            clip-path: circle(40% at 70% 60%);
+            background-color: lavender;
+            background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
+        }
+        .pg1.on{
+            animation: circle-ani 2s ease-in-out .5s forwards;
+        }
+        
+        @keyframes circle-ani {
+            0%{
+                clip-path: circle(40% at 70% 60%);
+            }
+            100%{
+                clip-path: circle(100% at 70% 60%);
+            }
+        }
+
+    </style>
+    <script>
+        // 자바스크립트 구역
+        window.addEventListener('load', ()=>{
+          document.querySelectorAll('.pg')
+          .forEach(ele=>{
+            ele.onclick = ()=>{
+              ele.classList.toggle('on');
+            }; /// click
+          }); /// forEach ///
+        }); /// load 구역 ///
+    </script>
 </head>
 <body>
     <!-- 메인영역 -->
     <div class="main-area">
         <div class="col-12">
-            <div class="circle"></div>
+            <div class="pg pg1"></div>
         </div>
     </div>
     <!-- 자기소개영역 -->
