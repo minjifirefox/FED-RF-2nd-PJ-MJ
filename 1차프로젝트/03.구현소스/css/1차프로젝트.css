@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/* 1차프로젝트 CSS */
+
+/* 12그리드 불러오기 */
+@import url(./grid_12_float.css);
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+/* 공사중 표시 */
+body * {
+    outline: 2px dashed gray;
+}
+
+.main-area{
+    height: 100vh;
+}
+
+/* .circle{
+    position: absolute;
+    top: 10em;
+    left: 60em;
+    width: 1000px;
+    height: 1000px;
+    background-color: lavender;
+    border-radius: 1000px;
+} */
+
+.introduce-area{
+    height: 100vh;
+}
+
+.work-area1{
+    height: 100vh;
+}
+
+.work-area2{
+    height: 100vh;
+}
+
+.work-area3{
+    height: 100vh;
+}
