@@ -12,15 +12,19 @@
         body{
             background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
         }
+        .main-area{
+            background-color: lavender;
+
+        }
         .pg{
+            position: relative;
             height: 100vh;
             transition: 2s ease-in-out;
             cursor: pointer;
         }
         .pg1{
-            clip-path: circle(40% at 70% 60%);
-            background-color: lavender;
-            /* background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb); */
+            clip-path: circle(30% at 80% 60%);
+            background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
         }
         .pg1.on{
             animation: circle-ani 2s ease-in-out .5s forwards;
@@ -28,7 +32,7 @@
         
         @keyframes circle-ani {
             0%{
-                clip-path: circle(40% at 70% 60%);
+                clip-path: circle(30% at 80% 60%);
             }
             100%{
                 clip-path: circle(100% at 70% 60%);
@@ -39,13 +43,23 @@
         .pic{
             position: absolute;
             z-index: 1;
-            top: 50%;
-            left: 50%;
-            width: 60vw;
+            top: 10%;
+            left: 5%;
+            width: 40vw;
             /* transform: scale(10%); */
         }
         .pic img{
         width: 100%;
+        }
+
+        .intro{
+            position: absolute;
+            /* z-index: 999; */
+            top: 30%;
+            right: 5%;
+            font-size: 5rem;
+            text-align: right;
+        
         }
 
     </style>
@@ -55,7 +69,7 @@
           document.querySelectorAll('.pg')
           .forEach(ele=>{
             ele.onclick = ()=>{
-              ele.classList.toggle('on');
+              ele.classList.add('on');
             }; /// click
           }); /// forEach ///
         }); /// load 구역 ///
@@ -65,13 +79,15 @@
     <!-- 메인영역 -->
     <div class="main-area">
         <div class="col-12">
-            <div class="pic">
-                <img src="./images/민지캐릭터.png" alt="민지캐릭터">
-
-            </div>
+            
             <div class="pg pg1">
-
+                <div class="pic">
+                    <img src="./images/민지캐릭터.png" alt="민지캐릭터">
+                </div>
+                <h1 class="intro">Hi,<br> I'm Minji Kim</h1>
             </div>
+      
+           
         </div>
     </div>
     <!-- 자기소개영역 -->
@@ -104,5 +120,27 @@
         
         </div>
     </div>
+    <nav class="indic">
+        <ul>
+            <li class="on">
+                <a href="#pg1"><span>메인</span></a>
+            </li>
+            <li>
+                <a href="#pg2"><span>자기소개</span></a>
+            </li>
+            <li>
+                <a href="#pg3"><span>작업물1</span></a>
+            </li>
+            <li>
+                <a href="#pg4"><span>작업물2</span></a>
+            </li>
+            <li>
+                <a href="#pg5"><span>작업물3</span></a>
+            </li>
+            <li>
+                <a href="#pg6"><span>컨택</span></a>
+            </li>
+        </ul>
+    </nav>
 </body>
 </html>
