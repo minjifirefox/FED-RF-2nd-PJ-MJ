@@ -11,6 +11,7 @@
         } */
         body{
             background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
+            background-attachment: fixed;
         }
         .main-area{
             background-color: lavender;
@@ -19,15 +20,16 @@
         .pg{
             position: relative;
             height: 100vh;
-            transition: 2s ease-in-out;
             cursor: pointer;
         }
         .pg1{
             clip-path: circle(30% at 80% 60%);
             background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
+            background-attachment: fixed;
         }
         .pg1.on{
             animation: circle-ani 2s ease-in-out .5s forwards;
+            will-change: clip-path;
         }
         
         @keyframes circle-ani {
@@ -47,10 +49,26 @@
             left: 5%;
             width: 40vw;
             /* transform: scale(10%); */
+            /* perspective: 200vh; */
         }
         .pic img{
         width: 100%;
+        /* animation: pic-ani 1s ease-in-out infinite alternate; */
         }
+        /* @keyframes pic-ani {
+            0%{
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            30%{
+                transform: rotateY(10deg) rotateX(10deg);
+            }
+            60%{
+                transform: rotateY(-10deg) rotateX(-10deg);
+            }
+            100%{
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+        } */
 
         .intro{
             position: absolute;
@@ -64,15 +82,32 @@
 
     </style>
     <script>
+        // 한번작동 상태변수
+        let isOnce = false;
+
+        // 페이지 이동시 이벤트
         // 자바스크립트 구역
-        window.addEventListener('load', ()=>{
-          document.querySelectorAll('.pg')
-          .forEach(ele=>{
-            ele.onclick = ()=>{
-              ele.classList.add('on');
-            }; /// click
-          }); /// forEach ///
-        }); /// load 구역 ///
+        window.addEventListener('wheel', startScroll, {passive: false});
+        function startScroll(e){
+            if(isOnce) return;
+            // 5초후 잠금설정
+            setTimeout(() => {
+                isOnce = true;                
+            }, 3000);
+
+
+            e.preventDefault();
+            console.log('스크롤');
+            document.querySelector('.pg1').classList.add('on');
+
+        }
+        //   document.querySelectorAll('.pg')
+        //   .forEach(ele=>{
+        //     ele.onclick = ()=>{
+        //       ele.classList.add('on');
+        //     }; /// click
+        //   }); /// forEach ///
+        
     </script>
 </head>
 <body>
