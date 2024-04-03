@@ -3,12 +3,8 @@
 /* 1차프로젝트 CSS */
 
 /* 12그리드 불러오기 */
+@import url(./reset.css);
 @import url(./grid_12_float.css);
-
-html,body{
-    margin: 0;
-    padding: 0;
-}
 
 /* 공사중 표시 */
 body * {
