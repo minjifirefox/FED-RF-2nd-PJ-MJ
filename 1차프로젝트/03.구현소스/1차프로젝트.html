@@ -1,84 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minji Portfolio</title>
-    <link rel="stylesheet" href="./css/1차프로젝트.css">
+    <link rel="stylesheet" href="./css/1차프로젝트.css" />
     <style>
-        /* body{
+      /* body{
             background-color: rgb(22, 21, 21);
         } */
-        body{
-            background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
-            background-attachment: fixed;
-        }
-        .main-area{
-            background-color: lavender;
+      body {
+        background-image: linear-gradient(
+          to top right,
+          #5b83b3,
+          #ec817b,
+          #9b82bb
+        );
+        background-attachment: fixed;
+      }
+      .main-area {
+        background-color: lavender;
+      }
+      .menu {
+        position: fixed;
+        top: 0;
+        transform: translateX(-50%);
+        left: 50%;
+      }
+      .menu ul {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .menu ul a {
+        display: block;
+        padding: 0 13px;
+        white-space: nowrap;
 
-        }
-        .menu{
-            position: fixed;
-            top: 0;
-            transform: translateX(-50%);
-            left: 50%;
-        }
-        .menu ul{
-            display: flex;
-            justify-content: flex-end;
-        }
-        .menu ul a{
-            display: block;
-            padding: 0 13px;
-            white-space: nowrap;
-            
-            font-size: 1.7rem;
-            line-height: 60px;
-            font-weight: bold;
-        }
-        .menu ul a:hover{
-            color: #ffffff;
-            text-shadow: -1px 0px #252525, 0px 1px #252525, 1px 0px #252525, 0px -1px #252525;
-        }
-        .pg{
-            position: relative;
-            height: 100vh;
-            cursor: pointer;
-        }
-        .pg1{
-            clip-path: circle(30% at 80% 60%);
-            background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
-            background-attachment: fixed;
-        }
-        .pg1.on{
-            animation: circle-ani 2s ease-in-out .5s forwards;
-            will-change: clip-path;
-        }
-        
-        @keyframes circle-ani {
-            0%{
-                clip-path: circle(30% at 80% 60%);
-            }
-            100%{
-                clip-path: circle(100% at 70% 60%);
-            }
-        }
+        font-size: 1.7rem;
+        line-height: 60px;
+        font-weight: bold;
+      }
+      .menu ul a:hover {
+        color: #ffffff;
+        text-shadow: -1px 0px #252525, 0px 1px #252525, 1px 0px #252525,
+          0px -1px #252525;
+      }
+      .pg {
+        position: relative;
+        height: 100vh;
+        cursor: pointer;
+      }
+      .pg1 {
+        clip-path: circle(30% at 80% 60%);
+        background-image: linear-gradient(
+          to top right,
+          #5b83b3,
+          #ec817b,
+          #9b82bb
+        );
+        background-attachment: fixed;
+      }
+      .pg1.on {
+        animation: circle-ani 2s ease-in-out 0.5s forwards;
+        will-change: clip-path;
+      }
 
-        /* 민지캐릭터 */
-        .pic{
-            position: absolute;
-            z-index: 1;
-            top: 10%;
-            left: 5%;
-            width: 40vw;
-            /* transform: scale(10%); */
-            /* perspective: 200vh; */
+      @keyframes circle-ani {
+        0% {
+          clip-path: circle(30% at 80% 60%);
         }
-        .pic img{
+        100% {
+          clip-path: circle(100% at 70% 60%);
+        }
+      }
+
+      /* 민지캐릭터 */
+      .pic {
+        position: absolute;
+        z-index: 1;
+        top: 10%;
+        left: 5%;
+        width: 40vw;
+        /* transform: scale(10%); */
+        /* perspective: 200vh; */
+      }
+      .pic img {
         width: 100%;
         /* animation: pic-ani 1s ease-in-out infinite alternate; */
-        }
-        /* @keyframes pic-ani {
+      }
+      /* @keyframes pic-ani {
             0%{
                 transform: rotateY(0deg) rotateX(0deg);
             }
@@ -93,157 +103,210 @@
             }
         } */
 
-        .intro{
-            position: absolute;
-            /* z-index: 999; */
-            top: 30%;
-            right: 5%;
-            font-size: 5rem;
-            text-align: right;
-        
-        }
+      .intro {
+        position: absolute;
+        /* z-index: 999; */
+        top: 30%;
+        right: 5%;
+        font-size: 5rem;
+        text-align: right;
+      }
 
-        .work-area1 img{
-            position: relative;
-            float: left;
-            padding: 50px;
-            width: 400px;
-            border-radius: 50%;
-        }
+      .work-area1 img {
+        padding: 50px;
+        width: 400px;
+        border-radius: 50%;
+      }
 
+      .work{
+        position: relative;
+        height: 100vh;
+      }
+      .work ul {
+          position: absolute;
+          width: 500px;
+          height: 500px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          outline: 2px dashed #ccc;
+        }
+      .work ul li{
+          position: absolute;
+          transition: .4s ease-in-out;
+        }
+        .work ul li:nth-child(1) {
+            left: -300%;
+        }
+        .work ul li:nth-child(2) {
+            left: -200%;
+            opacity: 0;
+        }
+        .work ul li:nth-child(3) {
+            left: -100%;
+        }
+        .work ul li:nth-child(4) {
+            left: 0%;
+        }
+        .work ul li:nth-child(5) {
+            left: 100%;
+        }
+        .work ul li:nth-child(6) {
+            left: 200%;
+            opacity: 0;
+        }
+        .work ul li:nth-child(7) {
+            left: 300%;
+        }
     </style>
     <script>
-        // 한번작동 상태변수
-        let isOnce = false;
+      // 한번작동 상태변수
+      let isOnce = false;
 
-        // 페이지 이동시 이벤트
-        // 자바스크립트 구역
-        window.addEventListener('wheel', startScroll, {passive: false});
-        function startScroll(e){
-            if(isOnce) return;
-            // 5초후 잠금설정
-            setTimeout(() => {
-                isOnce = true;                
-            }, 3000);
+      // 페이지 이동시 이벤트
+      // 자바스크립트 구역
+      window.addEventListener("wheel", startScroll, { passive: false });
+      function startScroll(e) {
+        if (isOnce) return;
+        // 5초후 잠금설정
+        setTimeout(() => {
+          isOnce = true;
+        }, 3000);
 
+        e.preventDefault();
+        console.log("스크롤");
+        document.querySelector(".pg1").classList.add("on");
+      }
+      //   document.querySelectorAll('.pg')
+      //   .forEach(ele=>{
+      //     ele.onclick = ()=>{
+      //       ele.classList.add('on');
+      //     }; /// click
+      //   }); /// forEach ///
 
-            e.preventDefault();
-            console.log('스크롤');
-            document.querySelector('.pg1').classList.add('on');
+      window.addEventListener('load',()=>{
 
-        }
-        //   document.querySelectorAll('.pg')
-        //   .forEach(ele=>{
-        //     ele.onclick = ()=>{
-        //       ele.classList.add('on');
-        //     }; /// click
-        //   }); /// forEach ///
-        
+          const tg = document.querySelector('.work ul');
+          setInterval(()=>{
+            tg.appendChild(tg.querySelectorAll('li')[0]);
+          },2000)
+
+      });
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- 메인영역 -->
     <div class="main-area">
-        <div class="col-12">
-            
-            <div class="pg pg1">
-                <div class="pic">
-                    <img src="./images/민지캐릭터.png" alt="민지캐릭터">
-                </div>
-                <h1 class="intro">Hi,<br> I'm Minji Kim</h1>
-            </div>
-            
-            <nav class="menu">
-                <ul>
-                    <li>
-                        <a href="#">Main</a>
-                    </li>
-                    <li>
-                        <a href="#">About Minji</a>
-                    </li>
-                    <li>
-                        <a href="#">Work</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-      
-           
+      <div class="col-12">
+        <div class="pg pg1">
+          <div class="pic">
+            <img src="./images/민지캐릭터.png" alt="민지캐릭터" />
+          </div>
+          <h1 class="intro">
+            Hi,<br />
+            I'm Minji Kim
+          </h1>
         </div>
+
+        <nav class="menu">
+          <ul>
+            <li>
+              <a href="#">Main</a>
+            </li>
+            <li>
+              <a href="#">About Minji</a>
+            </li>
+            <li>
+              <a href="#">Work</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
     <!-- 자기소개영역 -->
     <div class="introduce-area">
-        <div class="col-12">
-        
-        </div>
+      <div class="col-12"></div>
     </div>
     <!-- 작업물영역(1) -->
     <div class="work-area1">
-        <div class="col-12">
-            <div class="work">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="./images/축제리플렛1.jpg" alt="축제리플렛1">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./images/졸업앨범표지.jpg" alt="졸업앨범">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./images/배너1.jpg" alt="학생인권배너">
-                        </a>
-                    </li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
+      <div class="col-12">
+        <div class="work">
+          <ul>
+              <li>
+                  <a href="#">
+                      <img src="./images/졸업앨범표지.jpg" alt="졸업앨범" />
+                  </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/배너1.jpg" alt="학생인권배너" />
+                </a>
+              </li>
+            <li>
+              <a href="#">
+                <img src="./images/축제리플렛1.jpg" alt="축제리플렛1" />
+              </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/졸업앨범표지.jpg" alt="졸업앨범" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/배너1.jpg" alt="학생인권배너" />
+                </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/축제리플렛1.jpg" alt="축제리플렛1" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/축제리플렛1.jpg" alt="축제리플렛1" />
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
     <!-- 작업물영역(2) -->
     <div class="work-area2">
-        <div class="col-12">
-        
-        </div>
+      <div class="col-12"></div>
     </div>
     <!-- 작업물영역(3) -->
     <div class="work-area3">
-        <div class="col-12">
-        
-        </div>
+      <div class="col-12"></div>
     </div>
     <!-- 컨택영역 -->
     <div class="work-area3">
-        <div class="col-12">
-        
-        </div>
+      <div class="col-12"></div>
     </div>
     <nav class="indic">
-        <ul>
-            <li class="on">
-                <a href="#pg1"><span>메인</span></a>
-            </li>
-            <li>
-                <a href="#pg2"><span>자기소개</span></a>
-            </li>
-            <li>
-                <a href="#pg3"><span>작업물1</span></a>
-            </li>
-            <li>
-                <a href="#pg4"><span>작업물2</span></a>
-            </li>
-            <li>
-                <a href="#pg5"><span>작업물3</span></a>
-            </li>
-            <li>
-                <a href="#pg6"><span>컨택</span></a>
-            </li>
-        </ul>
+      <ul>
+        <li class="on">
+          <a href="#pg1"><span>메인</span></a>
+        </li>
+        <li>
+          <a href="#pg2"><span>자기소개</span></a>
+        </li>
+        <li>
+          <a href="#pg3"><span>작업물1</span></a>
+        </li>
+        <li>
+          <a href="#pg4"><span>작업물2</span></a>
+        </li>
+        <li>
+          <a href="#pg5"><span>작업물3</span></a>
+        </li>
+        <li>
+          <a href="#pg6"><span>컨택</span></a>
+        </li>
+      </ul>
     </nav>
-</body>
+  </body>
 </html>
