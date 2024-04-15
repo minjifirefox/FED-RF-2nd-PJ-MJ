@@ -5,190 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minji Portfolio</title>
     <link rel="stylesheet" href="./css/1차프로젝트.css" />
+    <!-- 폰트어썸 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-      /* body{
-            background-color: rgb(22, 21, 21);
-        } */
-      body {
-        background-image: linear-gradient(
-          to top right,
-          #5b83b3,
-          #ec817b,
-          #9b82bb
-        );
-        background-attachment: fixed;
-        overflow: hidden;
-      }
-      .main-area {
-        background-color: lavender;
-      }
-      .menu {
-        position: fixed;
-        top: 0;
-        transform: translateX(-50%);
-        left: 50%;
-        z-index: 9999;
-      }
-      .menu ul.gnb {
-        display: flex;
-        justify-content: flex-end;
-      }
-      .menu ul.gnb a {
-        display: block;
-        padding: 0 13px;
-        white-space: nowrap;
-
-        font-size: 1.7rem;
-        line-height: 60px;
-        font-weight: bold;
-      }
-      .menu ul.gnb a:hover ,
-      .menu ul.gnb li.on a {
-        color: #ffffff;
-        text-shadow: -1px 0px #252525, 0px 1px #252525, 1px 0px #252525,
-          0px -1px #252525;
-      }
-      .smenu{
-        position: absolute;
-        height: 0;
-        overflow: hidden;
-        transition: .4s;
-      }
-      .menu ul>li:hover .smenu{
-        height: 180px;
-      }
-      .pg {
-        position: relative;
-        height: 100vh;
-        cursor: pointer;
-      }
-      .pg1 {
-        clip-path: circle(30% at 80% 60%);
-        background-image: linear-gradient(
-          to top right,
-          #5b83b3,
-          #ec817b,
-          #9b82bb
-        );
-        background-attachment: fixed;
-      }
-      .pg1.on {
-        animation: circle-ani 2s ease-in-out 0.5s forwards;
-        will-change: clip-path;
-      }
-
-      @keyframes circle-ani {
-        0% {
-          clip-path: circle(30% at 80% 60%);
-        }
-        100% {
-          clip-path: circle(100% at 70% 60%);
-        }
-      }
-
-      /* 민지캐릭터 */
-      .pic {
-        position: absolute;
-        z-index: 1;
-        top: 10%;
-        left: 5%;
-        width: 40vw;
-        /* transform: scale(10%); */
-        /* perspective: 200vh; */
-      }
-      .pic img {
-        width: 100%;
-        /* animation: pic-ani 1s ease-in-out infinite alternate; */
-      }
-      .twinkle>img{
-        overflow: hidden;
-      }
-      /* @keyframes pic-ani {
-            0%{
-                transform: rotateY(0deg) rotateX(0deg);
-            }
-            30%{
-                transform: rotateY(10deg) rotateX(10deg);
-            }
-            60%{
-                transform: rotateY(-10deg) rotateX(-10deg);
-            }
-            100%{
-                transform: rotateY(0deg) rotateX(0deg);
-            }
-        } */
-
-      .intro {
-        position: absolute;
-        /* z-index: 999; */
-        top: 30%;
-        right: 5%;
-        font-size: 5rem;
-        text-align: right;
-      }
-
-      .common img {
-        padding: 50px;
-        width: 400px;
-        border-radius: 50%;
-      }
-
-      .common h2 {
-        text-align: center;
-        transform: translateY(60px);
-      }
-
-      .work{
-        position: relative;
-        height: 100vh;
-      }
-      .work ul {
-          position: absolute;
-          width: 500px;
-          height: 500px;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%);
-          outline: 2px dashed #ccc;
-        }
-      .work ul li{
-          position: absolute;
-          transition: .4s ease-in-out;
-          filter: grayscale(80%);
-        }
-        .work ul li:nth-child(1) {
-            left: -300%;
-        }
-        .work ul li:nth-child(2) {
-            left: -200%;
-            opacity: 0;
-        }
-        .work ul li:nth-child(3) {
-            left: -100%;
-        }
-        .work ul li:nth-child(4) {
-            left: 0%;
-            filter: none;
-        }
-        .work ul li:nth-child(5) {
-            left: 100%;
-        }
-        .work ul li:nth-child(6) {
-            left: 200%;
-            opacity: 0;
-        }
-        .work ul li:nth-child(7) {
-            left: 300%;
-        }
-        .work ul li:nth-child(4):hover{
-          transform: scale(1.2);
-        }
-
-
-        .contact-area{
-          height: 100vh;
-        }
-    </style>
+      
+        
+        </style>
     <!-- 메인 JS 호출하기 -->
     <script src="./js/main.js" defer></script>
   </head>
@@ -203,7 +25,7 @@
           <div class="twinkle">
             <img src="./images/반짝이.png" alt="반짝이">
           </div>
-          <h1 class="intro">
+          <h1 class="title">
             Hi,<br />
             I'm Minji Kim
           </h1>
@@ -235,13 +57,26 @@
     </div>
     <!-- 자기소개영역 -->
     <div class="introduce-area" id="introduce-area">
-      <div class="col-12"></div>
+      <div class="col-12">
+        <div class="intropic">
+          <img src="./images/소개사진.jpg" alt="김민지사진">
+        </div>
+        <div class="comment">
+          <p class="comment1">김민지</p>
+          <p class="comment2">
+            나이 : 25<br>
+            학력 : 삼육대학교 아트앤디자인학과 졸업<br>
+            수료 내역 : 2024.02.07 - 2024.07.31<br>
+            [기업프로젝트] 프론트엔드(React,PHP), 플러터(Flutter)활용 웹&앱개발 양성과정
+          </p>
+        </div>
+      </div>
     </div>
     <!-- 작업물영역(1) -->
     <div id="work-area1" class="work-area work-area1">
       <div class="col-12">
         <div class="common">
-          <h2>2016~2018</h2>
+          <h1>2016~2018</h1>
           <div class="work">
             <ul>
                 <li>
@@ -288,7 +123,7 @@
     <div id="work-area2" class="work-area work-area2">
       <div class="col-12">
         <dic class="common">
-          <h2>2019~2021</h2>
+          <h1>2019~2021</h1>
           <div class="work">
             <ul>
                 <li>
@@ -335,7 +170,7 @@
     <div id="work-area3" class="work-area work-area3">
       <div class="col-12">
         <div class="common">
-          <h2>2022~NOW</h2>
+          <h1>2022~NOW</h1>
           <div class="work">
             <ul>
                 <li>
@@ -380,7 +215,34 @@
     </div>
     <!-- 컨택영역 -->
     <div id="contact-area" class="contact-area">
-      <div class="col-12"></div>
+      <div class="col-12">
+        <div class="end-img">
+          <img src="./images/끝.gif" alt="마지막이미지">
+        </div>
+        <h1 class="contact-comment1">안녕하세요 생기 넘치는 디자이너<br>김민지입니다.</h1>
+        <h1 class="contact-comment2">꾸준함을 무기로 열심히 하겠습니다!</h1>
+        <!-- SNS -->
+        <div class="sns-box">
+          <ol>
+            <!-- 페이스북 -->
+            <li>
+              <a class="fa-brands fa-square-facebook" href="#"></a>
+            </li>
+            <!-- 트위터X -->
+            <li>
+              <a class="fa-brands fa-square-x-twitter" href="#"></a>
+            </li>
+            <!-- 인스타그램 -->
+            <li>
+              <a class="fa-brands fa-square-instagram" href="#"></a>
+            </li>
+            <!-- 유튜브 -->
+            <li>
+              <a class="fa-brands fa-square-youtube" href="#"></a>
+            </li>
+          </ol>
+        </div>
+      </div>
     </div>
     <nav class="indic gnb">
       <ul>
