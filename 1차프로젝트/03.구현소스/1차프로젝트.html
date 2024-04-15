@@ -17,6 +17,7 @@
           #9b82bb
         );
         background-attachment: fixed;
+        overflow: hidden;
       }
       .main-area {
         background-color: lavender;
@@ -26,12 +27,13 @@
         top: 0;
         transform: translateX(-50%);
         left: 50%;
+        z-index: 9999;
       }
-      .menu ul {
+      .menu ul.gnb {
         display: flex;
         justify-content: flex-end;
       }
-      .menu ul a {
+      .menu ul.gnb a {
         display: block;
         padding: 0 13px;
         white-space: nowrap;
@@ -40,10 +42,20 @@
         line-height: 60px;
         font-weight: bold;
       }
-      .menu ul a:hover {
+      .menu ul.gnb a:hover ,
+      .menu ul.gnb li.on a {
         color: #ffffff;
         text-shadow: -1px 0px #252525, 0px 1px #252525, 1px 0px #252525,
           0px -1px #252525;
+      }
+      .smenu{
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+        transition: .4s;
+      }
+      .menu ul>li:hover .smenu{
+        height: 180px;
       }
       .pg {
         position: relative;
@@ -120,6 +132,7 @@
 
       .common h2 {
         text-align: center;
+        transform: translateY(60px);
       }
 
       .work{
@@ -167,108 +180,18 @@
         .work ul li:nth-child(4):hover{
           transform: scale(1.2);
         }
+
+
+        .contact-area{
+          height: 100vh;
+        }
     </style>
-    <script>
-      // 한번작동 상태변수
-      let isOnce = false;
-
-      // 페이지 이동시 이벤트
-      // 자바스크립트 구역
-      window.addEventListener("wheel", startScroll, { passive: false });
-      function startScroll(e) {
-        if (isOnce) return;
-        // 5초후 잠금설정
-        setTimeout(() => {
-          isOnce = true;
-        }, 3000);
-
-        e.preventDefault();
-        console.log("스크롤");
-        document.querySelector(".pg1").classList.add("on");
-      }
-      //   document.querySelectorAll('.pg')
-      //   .forEach(ele=>{
-      //     ele.onclick = ()=>{
-      //       ele.classList.add('on');
-      //     }; /// click
-      //   }); /// forEach ///
-
-      window.addEventListener('load',()=>{
-
-          const tg = document.querySelector('.work ul');
-          setInterval(()=>{
-            tg.appendChild(tg.querySelectorAll('li')[0]);
-          },3000)
-
-      });
-
-// 1. 전역변수 설정하기 /////////////////
-// 1-1. 페이지변수
-let pgNum = 0;
-// 1-2. 휠상태변수(true는 막기/false는 통과)
-let stsWheel = false;
-// 1-3. .page 클래스 요소
-const elePage = document.querySelectorAll('.page');
-// 1-4. 전체 페이지 수
-const totalCnt = elePage.length;
-console.log('대상:',elePage,totalCnt,'개');
-
-      /********************************************************
-    메뉴 클릭시 이벤트 처리하기
-********************************************************/
-// 이벤트 대상 : .gnb a
-const gnb = document.querySelectorAll('.gnb a');
-// 이벤트 대상 : .indic a
-const indic = document.querySelectorAll('.indic a');
-console.log('gnb:',gnb,'/indic:',indic);
-// 이벤트 설정 + 기능 구현하기
-gnb.forEach((ele,idx)=>{
-    ele.onclick = () => {
-        // 메뉴 변경 함수 호출
-        chgMenu(idx);
-    }; /// click 함수 ///
-}) //// forEach ////
-
-// [메뉴 변경 함수 : .gnb + .indic] ////
-function chgMenu(idx){ // idx - 순번
-    // 클릭시 자신의 순번 찍기
-    console.log('순번:',idx);
-
-    // 1. 전역페이지변수에 순번 업데이트
-    pgNum = idx;
-
-    // 2. 전체 메뉴에 on 빼기
-    gnb.forEach((ele,seq) => {
-        // ele - a요소 / seq - 순번
-        if(idx === seq) { // 선택순번과 같으면 on 넣기
-            gnb[seq].parentElement.classList.add('on');
-        } /// if ///
-        else{ // 기타 경우 on 지우기
-            gnb[seq].parentElement.classList.remove('on');
-        } /// else ///
-    }); /// forEach ///
-
-    // 2. 전체 메뉴에 on 빼기
-    indic.forEach((ele,seq) => {
-        // ele - a요소 / seq - 순번
-        if(idx === seq) { // 선택순번과 같으면 on 넣기
-            ele.parentElement.classList.add('on');
-            indic[seq].parentElement.classList.add('on');
-        } /// if ///
-        else{ // 기타 경우 on 지우기
-            ele.parentElement.classList.remove('on');
-            indic[seq].parentElement.classList.remove('on');
-        } /// else ///
-    }); /// forEach ///
-    // for(let x of gnb){
-    //     x.parentElement.classList.remove('on');
-    // } /// for of ///
-}
-    </script>
+    <!-- 메인 JS 호출하기 -->
+    <script src="./js/main.js" defer></script>
   </head>
   <body>
     <!-- 메인영역 -->
-    <div class="main-area">
+    <div class="main-area" id="main-area">
       <div class="col-12">
         <div class="pg pg1">
           <div class="pic">
@@ -281,29 +204,35 @@ function chgMenu(idx){ // idx - 순번
         </div>
 
         <nav class="menu">
-          <ul>
-            <li>
-              <a href="#">Main</a>
+          <ul class="gnb">
+            <li class="on">
+              <a href="#main-area">Main</a>
             </li>
             <li>
-              <a href="#">About Minji</a>
+              <a href="#introduce-area">About Minji</a>
             </li>
             <li>
-              <a href="#">Work</a>
+              <a href="#work-area1">Work1</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#work-area2">Work2</a>
+            </li>
+            <li>
+              <a href="#work-area3">Work3</a>
+            </li>
+            <li>
+              <a href="#contact-area">Contact</a>
             </li>
           </ul>
         </nav>
       </div>
     </div>
     <!-- 자기소개영역 -->
-    <div class="introduce-area">
+    <div class="introduce-area" id="introduce-area">
       <div class="col-12"></div>
     </div>
     <!-- 작업물영역(1) -->
-    <div class="work-area1">
+    <div id="work-area1" class="work-area work-area1">
       <div class="col-12">
         <div class="common">
           <h2>2016~2018</h2>
@@ -350,7 +279,7 @@ function chgMenu(idx){ // idx - 순번
       </div>
     </div>
     <!-- 작업물영역(2) -->
-    <div class="work-area2">
+    <div id="work-area2" class="work-area work-area2">
       <div class="col-12">
         <dic class="common">
           <h2>2019~2021</h2>
@@ -397,7 +326,7 @@ function chgMenu(idx){ // idx - 순번
       </div>
     </div>
     <!-- 작업물영역(3) -->
-    <div class="work-area3">
+    <div id="work-area3" class="work-area work-area3">
       <div class="col-12">
         <div class="common">
           <h2>2022~NOW</h2>
@@ -444,28 +373,28 @@ function chgMenu(idx){ // idx - 순번
       </div>
     </div>
     <!-- 컨택영역 -->
-    <div class="work-area3">
+    <div id="contact-area" class="contact-area">
       <div class="col-12"></div>
     </div>
     <nav class="indic gnb">
       <ul>
-        <li>
-          <a href="#pg1"><span>메인</span></a>
+        <li class="on">
+          <a href="#main-area"><span>메인</span></a>
         </li>
         <li>
-          <a href="#pg2"><span>자기소개</span></a>
+          <a href="#introduce-area"><span>자기소개</span></a>
         </li>
         <li>
-          <a href="#pg3"><span>작업물1</span></a>
+          <a href="#work-area1"><span>작업물1</span></a>
         </li>
         <li>
-          <a href="#pg4"><span>작업물2</span></a>
+          <a href="#work-area2"><span>작업물2</span></a>
         </li>
         <li>
-          <a href="#pg5"><span>작업물3</span></a>
+          <a href="#work-area3"><span>작업물3</span></a>
         </li>
         <li>
-          <a href="#pg6"><span>컨택</span></a>
+          <a href="#contact-area"><span>컨택</span></a>
         </li>
       </ul>
     </nav>
