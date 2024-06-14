@@ -1,0 +1,20 @@
+.gnb{
+    position: fixed;
+    right: -15vw;
+    top: 0;
+    width: 20vw;
+    height: 100vh;
+    box-sizing: border-box;
+
+    z-index: 999;
+    background-color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5vw;
+
+    transition: right .4s ease-out;
+
+    &:hover{
+        right: 0;
+    }
+}
