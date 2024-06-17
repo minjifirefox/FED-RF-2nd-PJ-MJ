@@ -1,0 +1,31 @@
+.open>img{
+    width: 100%;
+}
+.intro{
+    height: 100vh;
+}
+.centerlogo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.bbbb{
+    height: 100%;
+    margin: 0 3vw;
+}
+.centerlogo .bbbb img{
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 28vw;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.aaaa,.cccc{
+    height: 100%;
+    .민지{
+        position: relative;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+}
