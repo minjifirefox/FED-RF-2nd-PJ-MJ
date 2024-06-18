@@ -11,6 +11,7 @@ export default function Main() {
         {/* <h1>메인영역</h1> */}
         <img src="./images/msb_open.gif" alt="오픈" />
       </div>
+      {/* 2. 소개영역 */}
       <div className="intro">
         <div className="centerlogo">
           <div className="aaaa">
@@ -27,6 +28,17 @@ export default function Main() {
           </p>
             </div>
         </div>
+      </div>
+      {/* 3. 소속가수영역 */}
+      <div className="artists">
+        <ul>
+          <li>
+            <img src="./images/silicagel.jpg" alt="실리카겔" />
+          </li>
+          <li>
+            <img src="./images/silicagel.jpg" alt="실리카겔" />
+          </li>
+        </ul>
       </div>
     </>
   );
