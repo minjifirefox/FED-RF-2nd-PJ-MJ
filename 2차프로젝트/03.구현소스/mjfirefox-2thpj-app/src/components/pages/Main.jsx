@@ -33,10 +33,10 @@ export default function Main() {
       <div className="artists">
         <ul>
           <li>
-            <img src="./images/silicagel.jpg" alt="실리카겔" />
+            <img src="./images/SLCG.png" alt="실리카겔" />
           </li>
           <li>
-            <img src="./images/silicagel.jpg" alt="실리카겔" />
+            <img src="./images/OKDAL.jpg" alt="옥상달빛" />
           </li>
         </ul>
       </div>

@@ -32,6 +32,9 @@
 .artists{
     height: 100vh;
 }
-.artists>img{
+.artists>ul>li>img{
     width: 100%;
+}
+.artists>img:first-child{
+    height: 100%;
 }
