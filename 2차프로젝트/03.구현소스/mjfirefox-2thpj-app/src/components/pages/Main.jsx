@@ -2,6 +2,7 @@
 
 // CSS불러오기
 import "../../css/main_area.scss";
+import App from "../plugin/App";
 
 export default function Main() {
   //// 코드 리턴구역 //////////////
@@ -30,16 +31,23 @@ export default function Main() {
         </div>
       </div>
       {/* 3. 소속가수영역 */}
-      <div className="artists">
+      <App />
+      {/* <div className="artists">
         <ul>
           <li>
-            <img src="./images/SLCG.png" alt="실리카겔" />
+            <img src="./images/SLCG.jpg" alt="실리카겔" />
           </li>
           <li>
             <img src="./images/OKDAL.jpg" alt="옥상달빛" />
           </li>
+          <li>
+            <img src="./images/10CM.jpg" alt="십센치" />
+          </li>
+          <li>
+            <img src="./images/SESONEON.jpg" alt="새소년" />
+          </li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 } /////////// Main /////////////////////
