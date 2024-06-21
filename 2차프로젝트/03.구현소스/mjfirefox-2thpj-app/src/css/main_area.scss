@@ -1,3 +1,10 @@
+div{
+    outline: 5px dashed red;
+}
+.open{
+    height: 100vh;
+}
+
 .open>img{
     width: 100%;
 }
@@ -37,4 +44,17 @@
 }
 .artists>img:first-child{
     height: 100%;
+}
+
+.release{
+    height: 100vh;
+}
+.loop-station{
+    display: flex;
+    padding: 25px;
+}
+
+.release>.second-loop{
+    position: absolute;
+    top: 100%;
 }

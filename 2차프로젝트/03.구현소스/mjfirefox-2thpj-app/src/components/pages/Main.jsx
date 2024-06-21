@@ -48,6 +48,92 @@ export default function Main() {
           </li>
         </ul>
       </div> */}
+      {/* 4. 앨범소개영역 */}
+      <div className="release">
+        <div className="first-loop">
+          <section className="text-marquee">
+            <div className="loop-station" /* onMouseEnter='handleMouse(true)' onMouseLeave='handleMouse(false)' */>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div className="second-loop">
+          <section className="text-marquee">
+            <div className="loop-station" /* onMouseEnter='handleMouse(true)' onMouseLeave='handleMouse(false)' */>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <span className="looping-word">
+                    🍓🍒중요한 소식🍒🍓
+                  </span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </>
   );
 } /////////// Main /////////////////////
