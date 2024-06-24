@@ -47,14 +47,20 @@ div{
 }
 
 .release{
+    position: relative;
     height: 100vh;
+    // 첫째루프
+    .first-loop{
+        position: absolute;
+        top: 0;
+    }
+    // 둘째루프
+    .second-loop{
+        position: absolute;
+        bottom: 0;
+    }
 }
 .loop-station{
     display: flex;
     padding: 25px;
-}
-
-.release>.second-loop{
-    position: absolute;
-    top: 100%;
 }
