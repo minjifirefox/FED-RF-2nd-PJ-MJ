@@ -1,66 +1,77 @@
-div{
-    outline: 5px dashed red;
+#root>*>* {
+  outline: 5px dashed red;
 }
-.open{
-    height: 100vh;
+.open {
+  height: 100vh;
 }
 
-.open>img{
-    width: 100%;
+.open > img {
+  width: 100%;
 }
-.intro{
-    height: 100vh;
+.intro {
+  height: 100vh;
 }
-.centerlogo{
-    height: 100%;
-    display: flex;
-    justify-content: center;
+.centerlogo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
-.bbbb{
-    height: 100%;
-    margin: 0 3vw;
+.bbbb {
+  height: 100%;
+  margin: 0 3vw;
 }
-.centerlogo .bbbb img{
+.centerlogo .bbbb img {
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 28vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.aaaa,
+.cccc {
+  height: 100%;
+  .민지 {
     position: relative;
     transform: translateY(-50%);
     top: 50%;
-    width: 28vw;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
+  }
 }
-.aaaa,.cccc{
-    height: 100%;
-    .민지{
-        position: relative;
-        transform: translateY(-50%);
-        top: 50%;
-    }
+.artists {
+  height: 100vh;
 }
-.artists{
-    height: 100vh;
+.artists > ul > li > img {
+  width: 100%;
 }
-.artists>ul>li>img{
-    width: 100%;
-}
-.artists>img:first-child{
-    height: 100%;
+.artists > img:first-child {
+  height: 100%;
 }
 
-.release{
+.release {
+  position: relative;
+  height: 100vh;
+  white-space: nowrap;
+  overflow: hidden;
+  > div {
+    position: absolute;
+    width: 100%;
+    font-size: 40px;
+  }
+  // 첫째루프
+  .first-loop {
+    top: 0;
+  }
+  // 둘째루프
+  .second-loop {
+    bottom: 0;
+  }
+  .loop-station {
     position: relative;
-    height: 100vh;
-    // 첫째루프
-    .first-loop{
-        position: absolute;
-        top: 0;
-    }
-    // 둘째루프
-    .second-loop{
-        position: absolute;
-        bottom: 0;
-    }
-}
-.loop-station{
+    left: 0;
     display: flex;
-    padding: 25px;
+    >div{
+        padding: 15px 30px;
+        flex-shrink: 0;
+    }
+  }
 }

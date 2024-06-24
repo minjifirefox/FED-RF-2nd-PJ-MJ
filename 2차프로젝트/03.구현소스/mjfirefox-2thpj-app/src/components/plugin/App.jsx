@@ -13,6 +13,14 @@ import './css/styles.css';
 import { Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {
+const setArr = [
+  ["slide1","SLCG","실리카겔"],
+  ["slide2","OKDAL","옥상달빛"],
+  ["slide3","10CM","십센치"],
+  ["slide4","SESONEON","새소년"],
+];
+
+
   return (
     <>
       <Swiper
@@ -26,18 +34,15 @@ export default function App() {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide className='detail'>
-            <div className="hov"><img src="../images/SLCG.jpg" alt='실리카겔' /></div>
-        </SwiperSlide>
-        <SwiperSlide className='detail'>
-            <div className="hov"><img src="../images/OKDAL.jpg" alt="옥상달빛" /></div>
-        </SwiperSlide>
-        <SwiperSlide className='detail'>
-            <div className="hov"><img src="../images/10CM.jpg" alt="십센치" /></div>
-        </SwiperSlide>
-        <SwiperSlide className='detail'>
-            <div className="hov"><img src="../images/SESONEON.jpg" alt="새소년" /></div>
-        </SwiperSlide>
+        {
+          setArr.map((v, i) => {
+            return (
+              <SwiperSlide className='detail' key={i}>
+                <div className={"hov "+v[0]}><img src={`../images/${v[1]}.jpg`} alt={v[2]} /></div>
+              </SwiperSlide>
+            );
+          })
+        }
       </Swiper>
     </>
   );
