@@ -1,5 +1,5 @@
 #root>*>* {
-  outline: 5px dashed red;
+//   outline: 5px dashed red;
 }
 .open {
   height: 100vh;
@@ -60,10 +60,12 @@
   // 첫째루프
   .first-loop {
     top: 0;
+    z-index: 999;
   }
   // 둘째루프
   .second-loop {
     bottom: 0;
+    z-index: 999;
   }
   .loop-station {
     position: relative;
@@ -73,5 +75,8 @@
         padding: 15px 30px;
         flex-shrink: 0;
     }
+  }
+  .text-marquee{
+    background-color: #fff;
   }
 }

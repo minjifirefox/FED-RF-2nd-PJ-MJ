@@ -51,16 +51,16 @@
     height: 100%;
     
     &.slide1::after{
-      content: '실리카겔';
+      content: 'Silica Gel';
     }
     &.slide2::after{
-      content: '옥상달빛';
+      content: 'OKDAL';
     }
     &.slide3::after{
-      content: '십센치';
+      content: '10CM';
     }
     &.slide4::after{
-      content: '새소년';
+      content: 'SESONEON';
     }
     &::after{
       display: block;
@@ -98,5 +98,5 @@
     box-shadow: 0 0 2px #0000008e;
   }
   .swiper-pagination-bullet-active{
-    background: rgb(7, 116, 224);
+    background: rgb(237, 78, 142);
   }

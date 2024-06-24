@@ -185,6 +185,9 @@ export default function Main() {
             </div>
           </section>
         </div>
+        <div>
+          <img src="./images/SLCG.jpg" alt="일단해봄" />
+        </div>
       </div>
     </>
   );
