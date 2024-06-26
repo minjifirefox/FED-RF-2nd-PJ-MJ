@@ -1,5 +1,5 @@
-#root>*>* {
-//   outline: 5px dashed red;
+#root > * > * {
+  //   outline: 5px dashed red;
 }
 .open {
   height: 100vh;
@@ -71,12 +71,57 @@
     position: relative;
     left: 0;
     display: flex;
-    >div{
-        padding: 15px 30px;
-        flex-shrink: 0;
+    > div {
+      padding: 15px 30px;
+      flex-shrink: 0;
     }
   }
-  .text-marquee{
+  .text-marquee {
     background-color: #fff;
   }
+
+  .album {
+    // position: relative;
+  }
+
+  .album ul {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .album ul li {
+    transition: 0.4s ease-in-out;
+    filter: grayscale(80%);
+  }
+
+  .album ul li img {
+    width: 300px;
+  }
+  .album ul li:nth-child(1) {
+    left: -300%;
+  }
+  .album ul li:nth-child(2) {
+    left: -200%;
+    opacity: 0;
+  }
+  .album ul li:nth-child(3) {
+    left: -100%;
+  }
+  .album ul li:nth-child(4) {
+    /* border-radius: none; */
+    left: 0%;
+    filter: none;
+  }
+  .album ul li:nth-child(3):hover img {
+    transform: scale(1.2);
+    transition: 0.4s ease-in-out;
+  }
+}
+
+.music-video{
+  height: 100vh;
 }

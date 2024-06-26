@@ -6,11 +6,11 @@ import "../../css/main_area.scss";
 import App from "../plugin/App";
 
 export default function Main() {
-  const leftVal = useRef([0,0]);
-  const stopSts = useRef([false,false]);
-  let tg = [0,0];
-  let oneSize = [0,0];
-  let boxes = [0,0];
+  const leftVal = useRef([0, 0]);
+  const stopSts = useRef([false, false]);
+  let tg = [0, 0];
+  let oneSize = [0, 0];
+  let boxes = [0, 0];
 
   const startFn = (seq) => {
     stopSts.current[seq] = false;
@@ -19,7 +19,7 @@ export default function Main() {
   const stopFn = (seq) => (stopSts.current[seq] = true);
 
   const flowFn = (seq) => {
-    console.log(oneSize[seq],leftVal.current[seq]);
+    console.log(oneSize[seq], leftVal.current[seq]);
     tg[seq].style.left = -leftVal.current[seq] + "px";
     leftVal.current[seq] = ++leftVal.current[seq];
 
@@ -42,18 +42,18 @@ export default function Main() {
     }
 
     // 멈춤상태가 false일때만 재귀호출
-    if (!stopSts.current[seq]) setTimeout(()=>flowFn(seq), 10);
+    if (!stopSts.current[seq]) setTimeout(() => flowFn(seq), 10);
   };
 
   useEffect(() => {
     const eleTg = document.querySelectorAll(".loop-station");
-    console.log("loop-station:",eleTg);
-    eleTg.forEach((ele,idx)=>{
+    console.log("loop-station:", eleTg);
+    eleTg.forEach((ele, idx) => {
       tg[idx] = ele;
-      console.log("대상:",ele);
+      console.log("대상:", ele);
       oneSize[idx] = tg[idx].querySelector("div").offsetWidth;
-      console.log("초기값:",oneSize[idx],idx);
-      
+      console.log("초기값:", oneSize[idx], idx);
+
       flowFn(idx);
     });
   });
@@ -68,13 +68,37 @@ export default function Main() {
       <div className="intro">
         <div className="centerlogo">
           <div className="aaaa">
-            <p className="민지">나는 민지야</p>
+            <p className="민지" align="right">
+              <b>Magic Strawberry Sound</b> 매직 스트로베리 사운드
+              <br />
+              작은 공간에서 함께 듣던 음악의 떨림을 기억합니다.
+              <br />
+              매직스트로베리사운드는 좋은 순간을 위한 매니지먼트를 지속합니다.
+              <br />
+              구성원의 다양성에 대한 존중은 긴밀한 연대로 이어지고 한계없이
+              <br />
+              자유로운 창작 활동의 기반이 됩니다. 우리의 창작물은 긍정적인
+              <br />
+              파장이 되어 당신의 일상 속 반짝이는 순간을 만듭니다.
+              <br />
+              매직스트로베리사운드는 이 모든 것을 ‘마법같다'고 말합니다.
+            </p>
           </div>
           <div className="bbbb">
             <img src="./images/msb_logo.jpg" alt="로고" />
           </div>
           <div className="cccc">
-            <p className="민지">너도 민지니?</p>
+            <p className="민지">
+              We remember the moments when music touched us deeply. MAGIC
+              <br />
+              STRAWBERRY SOUND stands for those moments. Embracing individuality
+              <br />
+              allows room for creativity that knows no limits. And that
+              <br />
+              creativity will turn into a wave that adds sparkles to your
+              <br />
+              day-to-day life. MAGIC STRAWBERRY SOUND calls all this magical.
+            </p>
           </div>
         </div>
       </div>
@@ -102,8 +126,8 @@ export default function Main() {
           <section className="text-marquee">
             <div
               className="loop-station"
-              onMouseEnter={()=>stopFn(0)}
-              onMouseLeave={()=>startFn(0)}
+              onMouseEnter={() => stopFn(0)}
+              onMouseLeave={() => startFn(0)}
             >
               <div>
                 <a href="#" target="_blank">
@@ -144,10 +168,10 @@ export default function Main() {
 
         <div className="second-loop">
           <section className="text-marquee">
-          <div
+            <div
               className="loop-station"
-              onMouseEnter={()=>stopFn(1)}
-              onMouseLeave={()=>startFn(1)}
+              onMouseEnter={() => stopFn(1)}
+              onMouseLeave={() => startFn(1)}
             >
               <div>
                 <a href="#" target="_blank">
@@ -185,9 +209,61 @@ export default function Main() {
             </div>
           </section>
         </div>
-        <div>
-          <img src="./images/SLCG.jpg" alt="일단해봄" />
+        <div className="album">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="./images/POWERANDRE99.jpg" alt="실리카겔앨범" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/40.jpg" alt="옥상달빛앨범" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/LateNightWalk.jpg" alt="십센치앨범" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/여름깃.jpg" alt="새소년앨범" />
+              </a>
+            </li>
+          </ul>
         </div>
+        {/* <img src="./images/SLCG.jpg" alt="일단해봄" /> */}
+      </div>
+      {/* 5. 뮤비추천영역 */}
+      <div className="music-video">
+        <ul>
+          <li>
+            <a href="#">
+              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            </a>
+          </li>
+        </ul>
       </div>
     </>
   );

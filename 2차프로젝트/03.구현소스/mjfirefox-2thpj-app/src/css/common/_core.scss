@@ -1,2 +1,13 @@
 /* DC.com 핵심공통 CSS - core.css */
 // 웹폰트를 로컬에서 쓸 경우 여기에 넣기
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+// font-family: "Noto Sans KR", sans-serif;
+// font-optical-sizing: auto;
+// font-weight: <weight>;
+// font-style: normal;
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+}
