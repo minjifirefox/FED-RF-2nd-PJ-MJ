@@ -375,29 +375,40 @@ export default function Main() {
       <div className="music-video">
         <ul>
           <li>
-            <a href="#">
+            <a href="https://youtu.be/tzL4A8hyXc8?si=VuLhIg26aU7p_O9H" target="_blank">
               <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
             </a>
+            <p>[M/V] 새소년(SESONEON) - 긴 꿈</p>
           </li>
           <li>
-            <a href="#">
-              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            <a href="https://youtu.be/DIPxnt5vnhU?si=G-IHjI-v-d-fKrnW" target="_blank">
+              <img src="./images/silicagelmv (3).jpg" alt="실리카겔뮤비1" />
             </a>
+            <p>[M/V] 실리카겔(Silica Gel) - T + Tik Tak Tok (feat. So!YoON!)</p>
           </li>
           <li>
-            <a href="#">
-              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            <a href="https://youtu.be/Ywzq7q66iJ4?si=2l_N4GcStrnoGvw1" target="_blank">
+              <img src="./images/OKDALmv (1).png" alt="옥상달빛뮤비1" />
             </a>
+            <p>[Lyric Video] 옥상달빛(OKDAL) - Happy Ending</p>
           </li>
           <li>
-            <a href="#">
-              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            <a href="https://youtu.be/DA-vauI8hMI?si=4ZNVVs9xConotCGh" target="_blank">
+              <img src="./images/10cmmv (1).png" alt="십센치뮤비1" />
             </a>
+            <p>[M/V] 10CM - 소년(Dear)</p>
           </li>
           <li>
-            <a href="#">
-              <img src="./images/SSNmv (2).jpg" alt="새소년뮤비1" />
+            <a href="https://youtu.be/o3aRASHu1vw?si=ydjtMXrA8MTEjVJB" target="_blank">
+              <img src="./images/OKDALmv (2).jpg" alt="옥상달빛뮤비1" />
             </a>
+            <p>[M/V] 옥상달빛(OKDAL) - Coming of age(어른이 될 시간)</p>
+          </li>
+          <li>
+            <a href="https://youtu.be/23sM_7PtNvY?si=rUTWcWba6lm8KuvG" target="_blank">
+              <img src="./images/silicagelmv (4).jpg" alt="실리카겔뮤비1" />
+            </a>
+            <p>[M/V] 실리카겔(Silica Gel) - Ryudejakeiru</p>
           </li>
         </ul>
       </div>

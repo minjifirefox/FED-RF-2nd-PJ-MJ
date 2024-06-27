@@ -93,7 +93,7 @@
       transform: translate(-50%, -50%);
 
       display: flex;
-      width: 40vw;
+      width: 30vw;
       aspect-ratio: 1;
     }
     // 공통 li
@@ -181,6 +181,11 @@
 
       img{
         width: 100%;
+        margin-bottom: 3vh;
+      }
+      p{
+        font-weight: bold;
+        font-size: 1vw;
       }
     }
   }
