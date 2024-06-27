@@ -5,12 +5,23 @@ import { useEffect, useRef } from "react";
 import "../../css/main_area.scss";
 import App from "../plugin/App";
 
+// 제이쿼리
+import $ from "jquery";
+
 export default function Main() {
+  // 흘러가는 글자 셋팅 ///////////
   const leftVal = useRef([0, 0]);
   const stopSts = useRef([false, false]);
   let tg = [0, 0];
   let oneSize = [0, 0];
   let boxes = [0, 0];
+
+  // 앨범 슬라이드 인터발용 변수 ////
+  const autoI = useRef(null);
+  // 앨범 슬라이드 타임아웃용 변수 ////
+  const autoT = useRef(null);
+  // 앨범 자동실행 호출 한번만 체크 변수 ////
+  const oneTime = useRef(true);
 
   const startFn = (seq) => {
     stopSts.current[seq] = false;
@@ -19,7 +30,7 @@ export default function Main() {
   const stopFn = (seq) => (stopSts.current[seq] = true);
 
   const flowFn = (seq) => {
-    console.log(oneSize[seq], leftVal.current[seq]);
+    // console.log(oneSize[seq], leftVal.current[seq]);
     tg[seq].style.left = -leftVal.current[seq] + "px";
     leftVal.current[seq] = ++leftVal.current[seq];
 
@@ -38,25 +49,120 @@ export default function Main() {
       // 한개의 크기 갱신
       boxes[seq] = tg[seq].querySelectorAll("div");
       oneSize[seq] = boxes[seq][0].offsetWidth;
-      console.log("갱신크기:", oneSize[seq]);
+      // console.log("갱신크기:", oneSize[seq]);
     }
 
     // 멈춤상태가 false일때만 재귀호출
     if (!stopSts.current[seq]) setTimeout(() => flowFn(seq), 10);
-  };
+  }; ///////////// flowFn함수 ////////////
 
+  /************************************* 
+    앨범 슬라이드 기능 함수 
+  *************************************/
+  const slideFn = (e) => {
+    // 1.기본기능막기
+    e.preventDefault();
+
+    // 2.버튼구분 : is(클래스명) -> true/false
+    let isR = $(e.currentTarget).is(".rb");
+
+    // 3.슬라이드 이동함수 호출
+    goSlide(isR);
+
+    // 4.버튼 클릭시 인터발 지우기 함수호출
+    clearAuto();
+  }; ////////////// slideFn //////////////
+
+  // 이동기능함수
+  const goSlide = (dir) => {
+    // dir - 방향(true:오른쪽, false:왼쪽)
+    // 변경대상: .album-slide
+    const eleTg = $(".album-slide");
+    // console.log("이동버튼클릭!", dir, eleTg);
+
+    // 3.버튼별 기능구현
+    // (1) 오른쪽버튼
+    if (dir) {
+      // 맨앞요소 맨뒤로 이동
+      eleTg.append(eleTg.find("li").first());
+    } //// if ////
+    // (2) 왼쪽버튼
+    else {
+      // 맨뒤요소 맨앞으로 이동
+      eleTg.prepend(eleTg.find("li").last());
+    } //// else /////
+  }; /////////// goSlide함수 ////////////
+
+  // 인터발 호출 함수 //////
+  const autoFn = () => {
+    console.log("인터발호출");
+    autoI.current = setInterval(() => {
+      // 오른쪽방향 호출
+      goSlide(true);
+    }, 2000);
+  }; /////////// autoFn ////////////
+
+  // 인터발 삭제 함수 ////
+  const clearAuto = () => {
+    console.log("인터발지우기 함수호출!");
+    // 인터발지우기
+    clearInterval(autoI.current);
+    // 타임아웃지우기
+    clearTimeout(autoT.current);
+    // 타임아웃으로 다시 인터발호출셋팅
+    autoT.current = setTimeout(autoFn, 3000);
+  }; /////////// clearAuto //////////
+
+  // 화면 랜더링 구역 //////////
   useEffect(() => {
+    // 1. 흘러가는 글자 셋팅호출
     const eleTg = document.querySelectorAll(".loop-station");
-    console.log("loop-station:", eleTg);
+    // console.log("loop-station:", eleTg);
     eleTg.forEach((ele, idx) => {
       tg[idx] = ele;
-      console.log("대상:", ele);
+      // console.log("대상:", ele);
       oneSize[idx] = tg[idx].querySelector("div").offsetWidth;
-      console.log("초기값:", oneSize[idx], idx);
+      // console.log("초기값:", oneSize[idx], idx);
 
       flowFn(idx);
+    }); ///// forEach /////
+
+    // 2. 앨범 슬라이드 자동호출을 위한
+    // 스크롤 이벤트 셋팅하기
+    // 대상: .album
+    const albumEle = document.querySelector(".album");
+    // 기준: 윈도우 1/3
+    const winH = (window.innerHeight / 3) * 2;
+    console.log("윈도우1/3:", winH);
+
+    $(window).on("scroll", () => {
+      let pos = albumEle.getBoundingClientRect().top;
+      console.log(pos);
+
+      // 한번만 실행 변수가 true 일때 실행
+      if (pos < winH && pos > -winH/2 && oneTime.current) {
+        oneTime.current = false;
+        console.log("자동한번만!!!!!!!!");
+        // 바로실행한번
+        goSlide(true);
+        // 인터발호출
+        autoFn();
+      }
+      // 기타의 경우 다시 멈추기
+      else if (
+        (pos > winH && !oneTime.current) ||
+        (pos < -winH/2 && !oneTime.current)
+        ) {
+        // 한번만 상태값 반대로 바꾸기
+        oneTime.current = true;
+        // 인터발지우기
+        clearInterval(autoI.current);
+        // 타임아웃지우기
+        clearTimeout(autoT.current);
+      }
     });
-  });
+  }); ///////// useEffect ////////
+
   //// 코드 리턴구역 //////////////
   return (
     <>
@@ -122,7 +228,7 @@ export default function Main() {
       </div> */}
       {/* 4. 앨범소개영역 */}
       <div className="release">
-        <div className="first-loop">
+        <div className="first-loop loop">
           <section className="text-marquee">
             <div
               className="loop-station"
@@ -166,7 +272,7 @@ export default function Main() {
           </section>
         </div>
 
-        <div className="second-loop">
+        <div className="second-loop loop">
           <section className="text-marquee">
             <div
               className="loop-station"
@@ -210,10 +316,10 @@ export default function Main() {
           </section>
         </div>
         <div className="album">
-          <ul>
+          <ul className="album-slide">
             <li>
               <a href="#">
-                <img src="./images/POWERANDRE99.jpg" alt="실리카겔앨범" />
+                <img src="./images/여름깃.jpg" alt="새소년앨범" />
               </a>
             </li>
             <li>
@@ -223,15 +329,45 @@ export default function Main() {
             </li>
             <li>
               <a href="#">
+                <img src="./images/POWERANDRE99.jpg" alt="실리카겔앨범" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
                 <img src="./images/LateNightWalk.jpg" alt="십센치앨범" />
               </a>
             </li>
+            {/* 잘라낼때 반복단위 슬라이드 아랫쪽 li */}
             <li>
               <a href="#">
                 <img src="./images/여름깃.jpg" alt="새소년앨범" />
               </a>
             </li>
+            <li>
+              <a href="#">
+                <img src="./images/40.jpg" alt="옥상달빛앨범" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/POWERANDRE99.jpg" alt="실리카겔앨범" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/LateNightWalk.jpg" alt="십센치앨범" />
+              </a>
+            </li>
           </ul>
+          {/* 버튼박스 */}
+          <aside className="btn-box">
+            <a href="#" className="abtn rb" onClick={slideFn}>
+              <img src="./images/right_btn.png" alt="오른쪽버튼" />
+            </a>
+            <a href="#" className="abtn lb" onClick={slideFn}>
+              <img src="./images/left_btn.png" alt="왼쪽버튼" />
+            </a>
+          </aside>
         </div>
         {/* <img src="./images/SLCG.jpg" alt="일단해봄" /> */}
       </div>
