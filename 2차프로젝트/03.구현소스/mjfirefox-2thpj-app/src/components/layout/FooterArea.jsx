@@ -20,9 +20,9 @@ export default function FooterArea() {
           FAX <br />
           02-336-5423 <br />
         </h2>
-        {/* <div className="footer-logo">
+        <div className="footer-logo">
           <img src="./images/MSB_footer_logo.jpg" alt="밑로고" />
-        </div> */}
+        </div>
       </div>
     </>
   );
