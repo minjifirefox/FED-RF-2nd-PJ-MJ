@@ -1,7 +1,14 @@
-.footer h2{
-    position: relative;
+.footer h2 {
+  position: relative;
 }
 
-.footer-logo{
-    position: absolute;
+.footer-logo {
+  position: absolute;
+  top: 2vw;
+  right: 10vw;
+}
+
+.footer-logo img {
+  height: 30vh;
+  z-index: 99;
 }

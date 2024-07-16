@@ -19,10 +19,10 @@ export default function FooterArea() {
           레이블 협업 문의 <br />
           FAX <br />
           02-336-5423 <br />
-        </h2>
         <div className="footer-logo">
           <img src="./images/MSB_footer_logo.jpg" alt="밑로고" />
         </div>
+        </h2>
       </div>
     </>
   );
