@@ -16,7 +16,7 @@ export default function TopArea() {
       <nav className="gnb">
         <ul>
           <li>
-            <a href="#">Artist</a>
+            <Link to="/artist">Artist</Link>
           </li>
           <li>
             <a href="#">Release</a>
