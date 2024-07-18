@@ -25,7 +25,7 @@ export default function MainComponent() {
         첫페이지로 구성됨 -> MainArea 컴포넌트 <Outlet/>에
         출력된다!*/}
           <Route index element={<Main />} />
-          <Route index element={<Artist />} />
+          <Route path="/artist" element={<Artist />} />
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}
       </Routes>
