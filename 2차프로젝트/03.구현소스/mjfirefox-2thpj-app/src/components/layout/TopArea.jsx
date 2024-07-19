@@ -25,7 +25,7 @@ export default function TopArea() {
   return (
     <>
       <header>
-        <img src="../images/msb_logo.png" alt="로고" />
+        <img src="../images/msb_logo.gif" alt="로고" />
       </header>
       <nav className="gnb">
         <ul>
