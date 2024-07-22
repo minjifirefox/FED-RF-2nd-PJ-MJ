@@ -47,7 +47,7 @@ export default function TopArea() {
             </ol>
           </li>
           <li>
-            <a href="#">Release</a>
+            <Link to="/Release">Release</Link>
           </li>
           <li>
             <a href="#">Shop</a>
