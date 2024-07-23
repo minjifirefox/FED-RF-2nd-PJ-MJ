@@ -16,6 +16,8 @@ export default function TopArea() {
     let txt = e.target.innerText;
     console.log("페이지로가!", txt);
 
+    window.scrollTo(0,0);
+
     // 페이지이동
     goNav("/artist", { state: { tit: txt } });
   };

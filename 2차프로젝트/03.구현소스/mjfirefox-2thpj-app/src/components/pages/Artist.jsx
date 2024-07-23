@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../css/artist.scss";
 import { useLocation } from "react-router-dom";
 
 function Artist() {
   // 라우터 전달값 받기
   const { state } = useLocation();
-
   console.log(state);
 
   // 아티스트 이름
@@ -13,6 +12,9 @@ function Artist() {
 
   // 키네임으로 모두 변경가능하게 할것!!!
   let keyName = state.tit.replace(/\s/g, "_");
+
+
+  const [myNum, setMyNum] = useState(1);
 
   let data = {
     "Silica Gel": {
@@ -66,6 +68,7 @@ function Artist() {
         "2016 – EBS스페이스 공감 올해의 헬로루키 대상",
         "2016 – 한국콘텐츠진흥원 K-루키즈 대상",
       ],
+      인포: [``, ``],
 
       // "2024 – 제21회 한국대중음악상 올해의 음악인"
       // "2024 – 제21회 한국대중음악상 최우수 모던록 노래"
@@ -114,6 +117,35 @@ function Artist() {
         "2015  제7회 멜론뮤직어워드 포크부문",
         "2011  제8회 한국대중음악상 최우수 팝 노래 부문",
         "2010  M.NET 아시안 뮤직 어워드 올해의 발견상",
+      ],
+      인포: [
+        `분명히 10CM는 한국 음악계의 하나의 아이콘이다. 
+        질펀한 가사와 달콤한 멜로디로 대중들을 사로잡은 10CM. 
+        인디 신에서 시작한 이 엉큼한 뮤지션은 한국 음악계의 인디와 
+        메이저의 경계를 허문 장본인이기도 하다. ‘오늘밤은 어둠이 무서워요’,
+         ‘아메리카노’로 이름을 알린 2010년에는 한국 버스킹 1세대로써 홍대 
+         씬의 ‘통기타와 젬베’ 열풍을 설명하는 척도였고, 연이어 꾸준히 
+         발매된 앨범들을 통해 대체 불가의 존재로 거듭나게 되었다. 탑 
+         아이돌들과의 콜라버레이션, 각종 드라마 OST, 대형 페스티벌 등 섭외 
+         1순위가 되었고, 식을 줄 모르는 열광 속에서 전 회 매진을 기록하는 단독 공연들. 
+         무엇이 그렇게 특별했을까? 그 대답은 우리의 가슴을 간지럽힌 
+         10CM의 음악에서 찾을 수 있겠다.`,
+        `10CM is a South Korean indie pop project led by singer Kwon Jeong-yeol,
+         whose amiable acoustic style transcended the country’s indie scene and 
+         found a widespread audience in the middle part of the 2010s. Taking its
+          name from the ten-centimeter height difference between the two members,
+          the group issued an EP in April 2010, establishing the low-key folk-pop
+          sound that consisted of Kwon on lead vocals and djembe (an African hand drum)
+            and Yoon on guitar and harmony vocals. The following year, their independent
+            full-length debut, 1.0, surprised many by selling over 200,000 copies and
+              earning the duo a Korean Music Award for Best Pop Song. Over the next two
+              years, 10cm became a reliable draw, consistently charting singles and
+                appearing on several soundtracks while also delivering a follow-up 
+                album in 2012’s 2.0. Two years later, their third album, 3.0, earned 
+                their highest chart placement yet, landing at number nine on the Gaon
+                albums chart. They hit number one in 2016 with their single “What the Spring?”
+                  and landed another Top Ten hit with “My Eyes” from the Guardian: The Lonely 
+                  and Great God soundtrack.`,
       ],
     },
     OKDAL: {
@@ -166,6 +198,7 @@ function Artist() {
         "2012 – 드라마 <그대를 사랑합니다> OST ‘그대와 나’, ‘보호해줘’",
         "2011 – 드라마 <마이 프린세스> OST ‘곰인형’",
       ],
+      인포: [``, ``],
     },
     "SE SO NEON": {
       가수: "새소년",
@@ -192,9 +225,11 @@ function Artist() {
         "2021 – 제18회 한국대중음악상 ‘최우수 모던록 : 음반’ 후보 | 18th Korean Music Awards ‘The Best Modern Rock : Album’ Nominate",
         "2021 – 제18회 한국대중음악상 ‘최우수 모던록 : 노래’ 후보 | 18th Korean Music Awards ‘The Best Modern Rock : Song’ Nominate",
       ],
+      인포: [``, ``],
     },
   };
 
+  ////////// 코드 리턴구역 ////////////
   return (
     <div className="container">
       <div className="scrollable left scbar">
@@ -204,72 +239,41 @@ function Artist() {
         <h2>{data[artiName]["가수"]}</h2>
         <p className="subtit sort">{data[artiName]["소제목1"]}</p>
         <p>
-          {data[artiName]["분류"].map((v) => (
-            <h3 style={{ display: "block" }}>{v}</h3>
+          {data[artiName]["분류"].map((v,i) => (
+            <h3 key={i} style={{ display: "block" }}>{v}</h3>
           ))}
         </p>
         <span></span>
         <p className="subtit">{data[artiName]["소제목2"]}</p>
         <p>
-          {data[artiName]["내용"].map((v) => (
-            <h3 style={{ display: "block" }}>{v}</h3>
+          {data[artiName]["내용"].map((v,i) => (
+            <h3 key={i} style={{ display: "block" }}>{v}</h3>
           ))}
         </p>
       </div>
       <div className="scrollable right scbar">
         {/* 오른쪽 영역에 표시할 내용 */}
-        <button>Info</button>
-        <button>Release</button>
-        <button>Video</button>
+        <button onClick={()=>setMyNum(1)}>Info</button>
+        <button onClick={()=>setMyNum(2)}>Release</button>
+        <button onClick={()=>setMyNum(3)}>Video</button>
         <h2>오른쪽 스크롤 영역</h2>
-        <p>컨텐츠1</p>
-        <p>컨텐츠2</p>
-        <p>컨텐츠3</p>
-        <p>컨텐츠4</p>
-        <p>컨텐츠5</p>
-        <p>컨텐츠6</p>
-        <p>컨텐츠1</p>
-        <p>컨텐츠2</p>
-        <p>컨텐츠3</p>
-        <p>컨텐츠4</p>
-        <p>컨텐츠5</p>
-        <p>컨텐츠6</p>
-        <p>컨텐츠1</p>
-        <p>컨텐츠2</p>
-        <p>컨텐츠3</p>
-        <p>컨텐츠4</p>
-        <p>컨텐츠5</p>
-        <p>컨텐츠6</p>
-        <p>컨텐츠1</p>
-        <p>컨텐츠2</p>
-        <p>컨텐츠3</p>
-        <p>컨텐츠4</p>
-        <p>컨텐츠5</p>
-        <p>컨텐츠6</p>
-        <p>컨텐츠1</p>
-        <p>컨텐츠2</p>
-        <p>컨텐츠3</p>
-        <p>컨텐츠4</p>
-        <p>컨텐츠5</p>
-        <p>컨텐츠6</p>
-        <p>컨텐츠1</p>
-        <p>컨텐츠2</p>
-        <p>컨텐츠3</p>
-        <p>컨텐츠4</p>
-        <p>컨텐츠5</p>
-        <p>컨텐츠6</p>
-        <p>컨텐츠1</p>
-        <p>컨텐츠2</p>
-        <p>컨텐츠3</p>
-        <p>컨텐츠4</p>
-        <p>컨텐츠5</p>
-        <p>컨텐츠6</p>
-        <p>컨텐츠1</p>
-        <p>컨텐츠2</p>
-        <p>컨텐츠3</p>
-        <p>컨텐츠4</p>
-        <p>컨텐츠5</p>
-        <p>컨텐츠6</p>
+
+        <>
+          {myNum === 1 && (
+            <div className="opt opt1">
+              <p>{data[artiName]["인포"][0]}</p>
+              <p>{data[artiName]["인포"][1]}</p>
+            </div>
+          )}
+          {myNum === 2 && (
+            <div className="opt opt2">
+              <img src={"/images/artist/" + keyName + "/main.jpg"} alt="" />
+              <img src={"/images/artist/" + keyName + "/main.jpg"} alt="" />
+              <img src={"/images/artist/" + keyName + "/main.jpg"} alt="" />
+            </div>
+          )}
+          {myNum === 3 && <div className="opt opt3">세번째 ㅎㅎㅎ</div>}
+        </>
       </div>
     </div>
   );
