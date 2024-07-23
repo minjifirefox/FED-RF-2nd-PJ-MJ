@@ -28,6 +28,7 @@ export default function TopArea() {
         <img src="../images/msb_logo.gif" alt="로고" />
       </header>
       <nav className="gnb">
+        <div className="close-btn">+</div>
         <ul>
           <li>
             <Link to="/artist">Artist</Link>
