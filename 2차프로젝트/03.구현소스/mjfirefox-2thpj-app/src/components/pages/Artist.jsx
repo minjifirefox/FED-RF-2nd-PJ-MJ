@@ -279,9 +279,9 @@ function Artist() {
           )}
           {myNum === 2 && (
             <div className="opt opt2">
-              <img src={"/images/artist/" + keyName + "/main.jpg"} alt="" />
-              <img src={"/images/artist/" + keyName + "/main.jpg"} alt="" />
-              <img src={"/images/artist/" + keyName + "/main.jpg"} alt="" />
+              <img src={"/images/album/" + keyName + "/1.jpg"} alt="" />
+              <img src={"/images/album/" + keyName + "/2.jpg"} alt="" />
+              <img src={"/images/album/" + keyName + "/3.jpg"} alt="" />
             </div>
           )}
           {myNum === 3 && <div className="opt opt3">세번째 ㅎㅎㅎ</div>}
