@@ -2,12 +2,15 @@ import React from 'react';
 import '../../css/image_grid.scss';
 
 const images = [
-  { src: 'path/to/image1.png', alt: 'Image 1' },
-  { src: 'path/to/image2.png', alt: 'Image 2' },
-  { src: 'path/to/image3.png', alt: 'Image 3' },
-  { src: 'path/to/image4.png', alt: 'Image 4' },
-  { src: 'path/to/image5.png', alt: 'Image 5' },
-  { src: 'path/to/image6.png', alt: 'Image 6' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (1).jpg', alt: 'Image 1' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (2).jpg', alt: 'Image 2' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (3).jpg', alt: 'Image 3' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (4).jpg', alt: 'Image 4' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (5).jpg', alt: 'Image 5' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (6).jpg', alt: 'Image 6' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (7).jpg', alt: 'Image 7' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (8).jpg', alt: 'Image 8' },
+  { src: process.env.PUBLIC_URL + '/images/tag_banner01 (9).jpg', alt: 'Image 9' },
 ];
 
 const ImageGrid = () => {

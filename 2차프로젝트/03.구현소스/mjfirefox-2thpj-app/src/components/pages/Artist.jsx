@@ -218,6 +218,9 @@ function Artist() {
       </div>
       <div className="scrollable right scbar">
         {/* 오른쪽 영역에 표시할 내용 */}
+        <button>Info</button>
+        <button>Release</button>
+        <button>Video</button>
         <h2>오른쪽 스크롤 영역</h2>
         <p>컨텐츠1</p>
         <p>컨텐츠2</p>

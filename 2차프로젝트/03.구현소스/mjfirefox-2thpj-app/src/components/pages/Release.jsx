@@ -6,9 +6,9 @@ import { useLocation } from "react-router-dom"
 function Release() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <h1>Magic Straw Berry Sound</h1>
-      </header>
+      </header> */}
       <ImageGrid />
     </div>
   );

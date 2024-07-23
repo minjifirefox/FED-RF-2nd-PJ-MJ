@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
 import Artist from "./components/pages/Artist";
+import Release from "./components/pages/Release";
 
 // 전체 공통 CSS 불러오기
 import "../src/css/index.scss";
@@ -26,6 +27,7 @@ export default function MainComponent() {
         출력된다!*/}
           <Route index element={<Main />} />
           <Route path="/artist" element={<Artist />} />
+          <Route path="/release" element={<Release />} />
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}
       </Routes>
