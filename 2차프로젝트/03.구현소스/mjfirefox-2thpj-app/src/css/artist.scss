@@ -46,3 +46,38 @@
     }
   }
 }
+
+$button-bg: #f2f2f2;
+$button-border: #ccc;
+$button-hover-bg: #e0e0e0;
+$button-active-bg: #d4d4d4;
+$button-text-color: #333;
+$button-hover-text-color: #000;
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: $button-bg;
+  border: 1px solid $button-border;
+  border-radius: 5px;
+  color: $button-text-color;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: $button-hover-bg;
+    color: $button-hover-text-color;
+  }
+
+  &:active {
+    background-color: $button-active-bg;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+}

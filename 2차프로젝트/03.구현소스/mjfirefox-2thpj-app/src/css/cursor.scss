@@ -1,0 +1,19 @@
+.App {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none; /* Hide the default cursor */
+  }
+  
+  .image {
+    position: absolute;
+    width: 50px;  /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    background-image: url('../../public/images/APEX.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none; /* Ensure it doesn't interfere with mouse events */
+    transform: translate(-50%, -50%); /* Center the image around the cursor */
+  }
+  

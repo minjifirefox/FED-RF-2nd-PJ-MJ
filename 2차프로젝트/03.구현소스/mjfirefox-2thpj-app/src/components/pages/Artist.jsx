@@ -68,7 +68,16 @@ function Artist() {
         "2016 – EBS스페이스 공감 올해의 헬로루키 대상",
         "2016 – 한국콘텐츠진흥원 K-루키즈 대상",
       ],
-      인포: [``, ``],
+      인포: [`실리카겔은 2013년 서울예술대학교 출신의 학생들 주도 하에 결성되었다. 밴드명은 평창 비엔날레에 출품하기 위해 그룹명을 정해야만 했는데, 우연히 껌통에서 보게 된 실리카 겔를 보고 지었다고 한다. 이후 음악에 VJ를 합친 스타일로 주목을 받기 시작했다.
+      2015년 그들은 첫 EP 새삼스레 들이켜본 무중력 사슴의 다섯가지 시각를 발매했으며, 2016년에는 첫 정규 음반 실리카겔을 발매했다. 그들은 EBS가 주관한 2016년 올해의 헬로루키로 선정되었으며, 2017년 한국대중음악상에서 올해의 신인상을 받았다.
+      2017년에는 밴드 파라솔과 합작 싱글 Space Angel을 발매했다. 같은 해 11월에는 EP SiO2.nH2O가 발매되었다.
+      이후 2018년 부터 2년간 휴식기에 들어갔으며, 김한주는 인터뷰에서 이 기간 동안 자신의 잠재력을 끌어올릴 방법을 탐구했다고 이야기 한 바 있다. 2020년 싱글 Kyo181을 통해 복귀했으며 2021년 싱글 Desert Eagle은 2022 한국대중음악상 최우수 모던 록 노래를 수상하기도 했다.
+      2022년 그들은 싱글 No Pain을 발매했으며, 대한민국 내에서 큰 인기를 얻었다. 이 싱글 역시 2023 한국대중음악상에서 최우수 모던 록 노래를 수상하며 연속 수상에 성공한다.
+      2023년 그들은 EP Machine Boy를 발매했으며, 펜타포트 락 페스티벌, DMZ 피스트레인 뮤직 페스티벌 등 다양한 록 페스티벌에서 공연했다. 이후 같은 해 황소윤이 참여한 싱글 틱택톡을 발매했다.`, `Silica Gel was formed in 2013 under the leadership of students from Seoul Institute of the Arts. The band had to decide on a group name in order to exhibit at the Pyeongchang Biennale, and it is said that the name came from silica gel that they happened to find in a gum container. Afterwards, he began to attract attention for his style that combined music and VJ.
+      In 2015, they released their first EP, Five Perspectives of a Weightless Deer, and in 2016, they released their first full-length album, Silica Gel. They were selected as Hello Rookie of the Year in 2016 by EBS, and received the Rookie of the Year Award at the 2017 Korean Popular Music Awards.
+      In 2017, they released the joint single Space Angel with the band Parasol. In November of the same year, the EP SiO2.nH2O was released. Afterwards, he went on a two-year break starting in 2018, and Kim Han-joo said in an interview that he explored ways to increase his potential during this period. He returned through the 2020 single Kyo181, and his 2021 single Desert Eagle also won the Best Modern Rock Song at the 2022 Korean Music Awards.
+      In 2022, they released the single No Pain, which became very popular in South Korea. This single also won the Best Modern Rock Song at the 2023 Korean Popular Music Awards, winning consecutive awards.
+      In 2023, they released the EP Machine Boy and performed at various rock festivals, including Pentaport Rock Festival and DMZ Peacetrain Music Festival. Later, in the same year, they released the single Tic Tac Tok featuring Hwang So-yoon.`],
 
       // "2024 – 제21회 한국대중음악상 올해의 음악인"
       // "2024 – 제21회 한국대중음악상 최우수 모던록 노래"
@@ -198,7 +207,7 @@ function Artist() {
         "2012 – 드라마 <그대를 사랑합니다> OST ‘그대와 나’, ‘보호해줘’",
         "2011 – 드라마 <마이 프린세스> OST ‘곰인형’",
       ],
-      인포: [``, ``],
+      인포: [`두 동갑내기 여성 김윤주와 박세진으로 이루어진 듀오 옥상달빛. 이들의 매력은 분명하다. ‘일상의 언어’로 노래하는 ‘일상의 이야기’들, 특유의 담백하면서도 위트 넘치는 노랫말로 전하는 삶에 대한 진솔한 메시지가 그것이다. 옥상달빛의 음악엔 인생의 희비가 고스란히 녹아있다. 인생의 모순을 있는 그대로 인정하면서도 그 속에서 긍정의 메시지를 끄집어내 때로는 청량함과 경쾌함으로, 때로는 정제된 차분함으로 풀어내는 이들의 음악은 ‘인생은 늘 행복과 슬픔이, 환희와 절망이 교차하지만 그래도, 그래서, 여전히 아름다운 것’이라 이야기한다. 하드코어한 인생사에 지친 우리들의 어깨를 조용히 다독거리는 작은 치유, 옥상달빛 음악의 진정한 힘이다.`, `Okdal, a female duo of the same age, Kim Yoon Ju and Park Se Jin. Their charm is quite obvious. It’s ‘Everyday stories’ that are sung in ‘Everyday language’, and honest messages about life conveyed through unique, simple yet witty lyrics. The music of Okdal reflects the joys and sorrows of life. While acknowledging the contradiction of life as it is, they draw out a positive message from it, sometimes with freshness and lightness, and sometimes with refined calm, saying ‘Life always intersects happiness and sadness, joy and despair, but still, therefore, it’s still beautiful’. It is the true power of Okdal’s music that a small remedy quietly pats our shoulders who are weary of our hardcore everyday life.`],
     },
     "SE SO NEON": {
       가수: "새소년",
@@ -225,7 +234,11 @@ function Artist() {
         "2021 – 제18회 한국대중음악상 ‘최우수 모던록 : 음반’ 후보 | 18th Korean Music Awards ‘The Best Modern Rock : Album’ Nominate",
         "2021 – 제18회 한국대중음악상 ‘최우수 모던록 : 노래’ 후보 | 18th Korean Music Awards ‘The Best Modern Rock : Song’ Nominate",
       ],
-      인포: [``, ``],
+      인포: [`2016년 결성되어 2017년 데뷔한 대한민국의 밴드. 매직스트로베리사운드 소속이다.
+      새소년이라는 밴드명은 보컬 황소윤이 인사동을 돌아다니던 중, 우연히 1980년대 인기 소년지였던 '새소년'을 발견해 감명 받아 이름을 따왔다고 한다. 새롭다는 뜻의 '새'일 수도 있고, 날아가는 '새'일 수도 있는 중의적인 의미의 '새'라는 단어가 마음에 들었다고 한다.
+      황소윤이 만든 프로젝트 밴드가 새소년의 시작이다. 제천간디학교 선후배 사이였던 강토 합류 이후 베이시스트 김푸른하늘이 밴드에 몸담다가 탈퇴하고 문팬시가 새로 밴드에 들어왔다. 그러나 2018년 12월, 강토와 문팬시가 병역 의무 등으로 인해 2018년 12월 30일 현대카드 언더스테이지에서의 단독 콘서트를 마지막으로 밴드를 탈퇴했다. 2019년 새로운 멤버 유수(드럼), 박현진(새소년)(베이스)를 영입하여 마침내 지금의 멤버가 되었다. 2022년 8월 유수(드럼)이 계약기간종료로 탈퇴한 뒤 2023년 현재 새소년은 황소윤, 박현진 두 멤버로 활동중이다.`, `A South Korean band formed in 2016 and debuted in 2017. He belongs to Magic Strawberry Sound.
+      The name of the band Saesonyeon is said to have been derived from vocalist Hwang So-yoon's inspiration after accidentally discovering 'Saesonye', a popular boy's magazine in the 1980s, while wandering around Insa-dong. It is said that he liked the word ‘bird’, which has an ambiguous meaning, which can be either ‘bird’ meaning new or ‘bird’ flying.
+      The project band created by Hwang So-yoon is the beginning of a new boy. After joining Kangto, who was a senior and junior at Jecheon Gandhi School, bassist Blue Sky Kim left the band and Moon Fancy joined the band. However, in December 2018, Kangto and Moonfancy left the band after holding a solo concert at Hyundai Card Understage on December 30, 2018 due to military service obligations. In 2019, new members Yoo Su (drums) and Park Hyun-jin (Sae Boy) (bass) were recruited to finally become the current members. After Yusu (drums) left in August 2022 due to the end of his contract, Sae Boy is currently active with two members, Hwang So-yoon and Park Hyun-jin.`],
     },
   };
 
@@ -253,10 +266,9 @@ function Artist() {
       </div>
       <div className="scrollable right scbar">
         {/* 오른쪽 영역에 표시할 내용 */}
-        <button onClick={()=>setMyNum(1)}>Info</button>
-        <button onClick={()=>setMyNum(2)}>Release</button>
-        <button onClick={()=>setMyNum(3)}>Video</button>
-        <h2>오른쪽 스크롤 영역</h2>
+        <button className="button" onClick={()=>setMyNum(1)}>Info</button>
+        <button className="button" onClick={()=>setMyNum(2)}>Release</button>
+        <button className="button" onClick={()=>setMyNum(3)}>Video</button>
 
         <>
           {myNum === 1 && (

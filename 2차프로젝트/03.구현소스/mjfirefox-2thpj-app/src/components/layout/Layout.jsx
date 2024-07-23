@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import FooterArea from "./FooterArea";
 import MainArea from "./MainArea";
 import TopArea from "./TopArea";
+import Cursor from "../plugin/Cursor";
 
 export default function Layout(){
 
