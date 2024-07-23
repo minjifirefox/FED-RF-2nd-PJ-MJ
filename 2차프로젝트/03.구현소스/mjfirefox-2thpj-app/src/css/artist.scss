@@ -39,15 +39,26 @@
       &.sort{
         padding-top: 70px;
       }
+      &.album{
+        font-size: 1.5vw;
+        padding-left: 20px
+      }
     }
     span{
       display: block;
       padding: 50px;
     }
-    .opt2>img{
+    .opt2>ul{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .opt2>ul>li>img{
       width: 19vw;
       padding: 10px;
       padding-top: 30px;
+    }
+    .opt3>ul>li{
+      padding-top: 50px;
     }
   }
 }

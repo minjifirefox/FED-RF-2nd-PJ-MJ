@@ -78,6 +78,8 @@ function Artist() {
       In 2017, they released the joint single Space Angel with the band Parasol. In November of the same year, the EP SiO2.nH2O was released. Afterwards, he went on a two-year break starting in 2018, and Kim Han-joo said in an interview that he explored ways to increase his potential during this period. He returned through the 2020 single Kyo181, and his 2021 single Desert Eagle also won the Best Modern Rock Song at the 2022 Korean Music Awards.
       In 2022, they released the single No Pain, which became very popular in South Korea. This single also won the Best Modern Rock Song at the 2023 Korean Popular Music Awards, winning consecutive awards.
       In 2023, they released the EP Machine Boy and performed at various rock festivals, including Pentaport Rock Festival and DMZ Peacetrain Music Festival. Later, in the same year, they released the single Tic Tac Tok featuring Hwang So-yoon.`],
+      앨범: ["Realize","Machine Boy","Tik Tak Tok"],
+      비디오: ["실리카겔 (Silica Gel) - Ryudejakeiru [MV]","실리카겔 (Silica Gel) - T + Tik Tak Tok (feat. So!YoON!) [MV]","실리카겔 (Silica Gel) - Desert Eagle [Performance Video]","실리카겔 (Silica Gel) - APEX [MV]"]
 
       // "2024 – 제21회 한국대중음악상 올해의 음악인"
       // "2024 – 제21회 한국대중음악상 최우수 모던록 노래"
@@ -279,12 +281,52 @@ function Artist() {
           )}
           {myNum === 2 && (
             <div className="opt opt2">
-              <img src={"/images/album/" + keyName + "/1.jpg"} alt="" />
-              <img src={"/images/album/" + keyName + "/2.jpg"} alt="" />
-              <img src={"/images/album/" + keyName + "/3.jpg"} alt="" />
+              <ul>
+                <li>
+                  <img src={"/images/album/" + keyName + "/1.jpg"} alt="" />
+                  <p className="album">{data[artiName]["앨범"][0]}</p>
+                </li>
+                <li>
+                  <img src={"/images/album/" + keyName + "/2.jpg"} alt="" />
+                  <p className="album">{data[artiName]["앨범"][1]}</p>
+                </li>
+                <li>
+                  <img src={"/images/album/" + keyName + "/3.jpg"} alt="" />
+                  <p className="album">{data[artiName]["앨범"][2]}</p>
+                </li>
+              </ul>
             </div>
           )}
-          {myNum === 3 && <div className="opt opt3">세번째 ㅎㅎㅎ</div>}
+          {myNum === 3 && 
+            <div className="opt opt3">
+              <ul>
+                <li>
+                  <a href="https://youtu.be/23sM_7PtNvY?si=hcH9Zp-ZXLIEQo50" target="_blank">
+                    <img src={"/images/video/" + keyName + "/1.jpg"} alt="" />
+                  </a>
+                  <p className="video">{data[artiName]["비디오"][0]}</p>
+                </li>
+                <li>
+                  <a href="https://youtu.be/DIPxnt5vnhU?si=9e122aGyvvdXTLj3" target="_blank">
+                    <img src={"/images/video/" + keyName + "/2.jpg"} alt="" />
+                  </a>
+                  <p className="video">{data[artiName]["비디오"][1]}</p>
+                </li>
+                <li>
+                  <a href="https://youtu.be/aU-zmH3lrk4?si=3irEsGt-GW0fAdAp" target="_blank">
+                    <img src={"/images/video/" + keyName + "/3.jpg"} alt="" />
+                  </a>
+                  <p className="video">{data[artiName]["비디오"][2]}</p>
+                </li>
+                <li>
+                  <a href="https://youtu.be/VB9cyPJCtok?si=n8L5KFSLzMutE8_-" target="_blank">
+                    <img src={"/images/video/" + keyName + "/4.jpg"} alt="" />
+                  </a>
+                  <p className="video">{data[artiName]["비디오"][3]}</p>
+                </li>
+              </ul>
+            </div>
+          }
         </>
       </div>
     </div>
