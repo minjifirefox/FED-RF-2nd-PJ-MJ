@@ -37,7 +37,7 @@ export default function TopArea() {
       </div>
       <header>
         <a href="/" className="home">
-          <img src="../images/msb_logo.gif" alt="로고" />
+          <img src={process.env.PUBLIC_URL+"/images/msb_logo.gif"} alt="로고" />
         </a>
       </header>
       <nav className="gnb">

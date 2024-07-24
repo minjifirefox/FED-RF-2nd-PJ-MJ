@@ -13,7 +13,7 @@ import "../src/css/index.scss";
 export default function MainComponent() {
   return (
     // 라우터 루트로 라우터 구성시작
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     {/* 상단이동 컴포넌트 호출 */}
     <ScrollTop />
       <Routes>

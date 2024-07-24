@@ -38,7 +38,7 @@ const setArr = [
           setArr.map((v, i) => {
             return (
               <SwiperSlide className='detail' key={i}>
-                <div className={"hov "+v[0]}><img src={`../images/${v[1]}.jpg`} alt={v[2]} /></div>
+                <div className={"hov "+v[0]}><img src={process.env.PUBLIC_URL+`/images/${v[1]}.jpg`} alt={v[2]} /></div>
               </SwiperSlide>
             );
           })

@@ -249,7 +249,7 @@ function Artist() {
     <div className="container">
       <div className="scrollable left scbar">
         {/* 왼쪽 영역에 표시할 내용 */}
-        <img src={"/images/artist/" + keyName + "/main.jpg"} alt="" />
+        <img src={process.env.PUBLIC_URL+"/images/artist/" + keyName + "/main.jpg"} alt="" />
         <h1>{artiName}</h1>
         <h2>{data[artiName]["가수"]}</h2>
         <p className="subtit sort">{data[artiName]["소제목1"]}</p>
@@ -283,15 +283,15 @@ function Artist() {
             <div className="opt opt2">
               <ul>
                 <li>
-                  <img src={"/images/album/" + keyName + "/1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL+"/images/album/" + keyName + "/1.jpg"} alt="" />
                   <p className="album">{data[artiName]["앨범"][0]}</p>
                 </li>
                 <li>
-                  <img src={"/images/album/" + keyName + "/2.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL+"/images/album/" + keyName + "/2.jpg"} alt="" />
                   <p className="album">{data[artiName]["앨범"][1]}</p>
                 </li>
                 <li>
-                  <img src={"/images/album/" + keyName + "/3.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL+"/images/album/" + keyName + "/3.jpg"} alt="" />
                   <p className="album">{data[artiName]["앨범"][2]}</p>
                 </li>
               </ul>
@@ -302,25 +302,25 @@ function Artist() {
               <ul>
                 <li>
                   <a href="https://youtu.be/23sM_7PtNvY?si=hcH9Zp-ZXLIEQo50" target="_blank">
-                    <img src={"/images/video/" + keyName + "/1.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL+"/images/video/" + keyName + "/1.jpg"} alt="" />
                   </a>
                   <p className="video">{data[artiName]["비디오"][0]}</p>
                 </li>
                 <li>
                   <a href="https://youtu.be/DIPxnt5vnhU?si=9e122aGyvvdXTLj3" target="_blank">
-                    <img src={"/images/video/" + keyName + "/2.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL+"/images/video/" + keyName + "/2.jpg"} alt="" />
                   </a>
                   <p className="video">{data[artiName]["비디오"][1]}</p>
                 </li>
                 <li>
                   <a href="https://youtu.be/aU-zmH3lrk4?si=3irEsGt-GW0fAdAp" target="_blank">
-                    <img src={"/images/video/" + keyName + "/3.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL+"/images/video/" + keyName + "/3.jpg"} alt="" />
                   </a>
                   <p className="video">{data[artiName]["비디오"][2]}</p>
                 </li>
                 <li>
                   <a href="https://youtu.be/VB9cyPJCtok?si=n8L5KFSLzMutE8_-" target="_blank">
-                    <img src={"/images/video/" + keyName + "/4.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL+"/images/video/" + keyName + "/4.jpg"} alt="" />
                   </a>
                   <p className="video">{data[artiName]["비디오"][3]}</p>
                 </li>
