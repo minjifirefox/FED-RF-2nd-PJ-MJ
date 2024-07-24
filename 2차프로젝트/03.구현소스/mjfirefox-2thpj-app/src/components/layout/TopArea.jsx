@@ -2,9 +2,11 @@
 
 // GNB 데이터 불러오기
 import { Link, useNavigate } from "react-router-dom";
+import cursorFn from "../plugin/Cursor.jsx";
 
 // CSS불러오기
 import "../../css/top_area.scss";
+import { useEffect } from "react";
 
 export default function TopArea() {
   const goNav = useNavigate();
@@ -21,9 +23,18 @@ export default function TopArea() {
     // 페이지이동
     goNav("/artist", { state: { tit: txt } });
   };
+
+  //랜더링후 실행구역 ///////////////
+  useEffect(() => {
+    cursorFn();
+  }, []); //useEffect
+
   //// 코드 리턴구역 //////////////
   return (
     <>
+      <div className="cursor">
+        <img src={process.env.PUBLIC_URL + "/images/note.png"} alt="" />
+      </div>
       <header>
         <a href="/" className="home">
           <img src="../images/msb_logo.gif" alt="로고" />

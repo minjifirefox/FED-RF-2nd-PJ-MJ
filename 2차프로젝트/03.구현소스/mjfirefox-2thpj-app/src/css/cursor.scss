@@ -1,19 +1,50 @@
-.App {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    cursor: none; /* Hide the default cursor */
+// .App {
+//   position: relative;
+//   width: 100vw;
+//   height: 100vh;
+//   overflow: hidden;
+//   cursor: none; /* Hide the default cursor */
+// }
+
+// .cursor {
+//   position: absolute;
+//   width: 50px; /* Adjust size as needed */
+//   height: 50px; /* Adjust size as needed */
+//   background-image: url("../../public/images/APEX.jpg"); /* Replace with your image URL */
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   pointer-events: none; /* Ensure it doesn't interfere with mouse events */
+//   transform: translate(-50%, -50%); /* Center the image around the cursor */
+// }
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  scale: 0.1;
+  transition: opacity 0.1s ease-out;
+  rotate: 25deg;
+  translate: -50% -50%;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 9999;
+
+  &.click {
+    rotate: 80deg;
   }
-  
-  .image {
-    position: absolute;
-    width: 50px;  /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
-    background-image: url('../../public/images/APEX.jpg'); /* Replace with your image URL */
-    background-size: cover;
-    background-repeat: no-repeat;
-    pointer-events: none; /* Ensure it doesn't interfere with mouse events */
-    transform: translate(-50%, -50%); /* Center the image around the cursor */
+  &.click::after {
+    translate: -25% 20%;
   }
-  
+
+  // &::after {
+  //   // translate: 110% 60%;
+  //   left: 50%;
+  //   content: "";
+  //   display: block;
+  //   width: auto;
+  //   height: 100vh;
+  //   // border-radius: 15px;
+  //   background: url("../../public/images/note.png");
+  //   // filter: blur(2px);
+  // }
+}
