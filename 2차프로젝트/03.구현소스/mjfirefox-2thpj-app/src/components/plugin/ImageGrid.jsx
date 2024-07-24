@@ -18,7 +18,7 @@ const ImageGrid = () => {
     <div className="image-grid">
       {images.map((image, index) => (
         <div key={index} className="image-item">
-          <img src={process.env.PUBLIC_URL + image.src} alt={image.alt} />
+          <img src={image.src} alt={image.alt} />
         </div>
       ))}
     </div>
